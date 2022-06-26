@@ -26,15 +26,14 @@ function sketchPad(gridSize) {
     grid.addEventListener("mousedown", (e) => {
       isDragging = true;
     });
-    grid.addEventListener("mouseover", (e) => {
+    grid.addEventListener("mousemove", (e) => {
       if (isDragging === true) {
         colorChanger(grid);
       }
     });
-    grid.addEventListener("mouseup", (e) => {
+    window.addEventListener("mouseup", (e) => {
       if (isDragging === true) {
         isDragging = false;
-        colorChanger(grid);
       }
     });
   }
