@@ -57,7 +57,7 @@ colorPicker.addEventListener("input", () => {
   color = colorPicker.value;
 });
 eraser.addEventListener("click", () => {
-  color = black;
+  color = "black";
 });
 
 clearScreen.addEventListener("click", () => {
