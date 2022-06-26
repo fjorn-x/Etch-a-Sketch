@@ -4,19 +4,31 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Etch-a-Sketch</title>
+    <title>Sketch Boy</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="header">Sketch Pad</div>
+    <div class="header">Grid Attack</div>
+
     <div class="grid-settings">
-      <div class="size-indicator"></div>
-      <input class="size-slider" type="range" value="16" min="1" max="64" />
       <div class="color-picker">
-        <input class="color-pick" type="color" value="#007529" />
+        <input class="color-pick" type="color" value="#fbd84a" />
+        <div class="color-Indicator">COLOR</div>
       </div>
+      <div class="size-picker">
+        <div class="size-indicator"></div>
+        <input class="size-slider" type="range" value="16" min="1" max="64" />
+      </div>
+
       <div class="eraser-container">
         <button type="button" class="eraser">Eraser</button>
       </div>
@@ -24,8 +36,11 @@
         <button type="button" class="clear">Clear Screen</button>
       </div>
     </div>
+    <div class="board-container">
+      <div class="board"></div>
+    </div>
 
-    <div class="board"></div>
+    <div class="footer">developed by fjorn-x</div>
     <script src="script.js" async defer></script>
   </body>
 </html>

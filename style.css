@@ -1,17 +1,74 @@
 body {
-  margin: 5px;
+  min-height: 99.7vh;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+  flex: 1;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-family: "Permanent Marker", cursive;
+  color: gold;
+  background-color: black;
+  padding: 10px;
 }
 
-.board {
-  height: 500px;
-  width: 500px;
-  border: 1px solid black;
-  display: grid;
+.grid-settings {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(35, 35, 35);
+  gap: 20px;
+
+  font-family: "Permanent Marker", cursive;
+  color: gold;
 }
+
+.board-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(35, 35, 35);
+}
+.board {
+  height: 400px;
+  width: 400px;
+  border: 5px solid gold;
+  display: grid;
+  background-color: black;
+}
+
+.footer {
+  position: fixed;
+  background-color: black;
+  font-family: "Permanent Marker", cursive;
+  color: gold;
+  padding: 5px;
+  font-size: 15px;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
 .grid-item {
   background-color: var(--color);
 }
-
+button {
+  font-family: "Permanent Marker", cursive;
+  color: gold;
+  background-color: black;
+  border: none;
+}
+button:hover {
+  transform: scale(1.5);
+}
 .color-pick {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -20,8 +77,10 @@ body {
   height: 50px;
   border: none;
   cursor: pointer;
+  padding: 0;
+  background-color: rgb(35, 35, 35);
 }
 .color-pick::-webkit-color-swatch {
   border: 2px solid black;
-  border-radius: 20px;
+  border-radius: 300px;
 }

@@ -1,4 +1,4 @@
-const DEFAULT_COLOR = "green";
+const DEFAULT_COLOR = "gold";
 
 const board = document.querySelector(".board");
 const setSize = document.querySelector(".set-size");
@@ -57,7 +57,7 @@ colorPicker.addEventListener("input", () => {
   color = colorPicker.value;
 });
 eraser.addEventListener("click", () => {
-  color = "white";
+  color = black;
 });
 
 clearScreen.addEventListener("click", () => {
