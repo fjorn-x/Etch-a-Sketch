@@ -1,0 +1,27 @@
+body {
+  margin: 5px;
+}
+
+.board {
+  height: 500px;
+  width: 500px;
+  border: 1px solid black;
+  display: grid;
+}
+.grid-item {
+  background-color: var(--color);
+}
+
+.color-pick {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+}
+.color-pick::-webkit-color-swatch {
+  border: 2px solid black;
+  border-radius: 20px;
+}
