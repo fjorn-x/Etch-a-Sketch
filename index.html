@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Sketch Boy</title>
+    <title>Grid Attack</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="reset.css" />
@@ -21,21 +21,29 @@
 
     <div class="grid-settings">
       <div class="color-picker">
-        <input class="color-pick" type="color" value="#fbd84a" />
+        <input class="color-pick" type="color" value="#FFD700" />
         <div class="color-Indicator">COLOR</div>
       </div>
       <div class="size-picker">
         <div class="size-indicator"></div>
         <input class="size-slider" type="range" value="16" min="1" max="64" />
+        <div>Grid Size</div>
       </div>
-
+      <div class="color-mode">
+        <button type="button" class="color-option selected">Color</button>
+      </div>
       <div class="eraser-container">
         <button type="button" class="eraser">Eraser</button>
       </div>
       <div class="clear-screen">
         <button type="button" class="clear">Clear Screen</button>
       </div>
+      <div class="board-picker">
+        <input class="board-pick color-pick" type="color" value="#000000" />
+        <div class="color-Indicator">BOARD</div>
+      </div>
     </div>
+
     <div class="board-container">
       <div class="board"></div>
     </div>

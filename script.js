@@ -1,4 +1,6 @@
 const DEFAULT_COLOR = "gold";
+const DEFAULT_MODE = "color";
+const DEFAULT_BOARD = "black";
 
 const board = document.querySelector(".board");
 const setSize = document.querySelector(".set-size");
@@ -7,10 +9,18 @@ const sizeIndicator = document.querySelector(".size-indicator");
 const colorPicker = document.querySelector(".color-pick");
 const clearScreen = document.querySelector(".clear");
 const eraser = document.querySelector(".eraser");
+const colorOption = document.querySelector(".color-option");
+const boardColor = document.querySelector(".board-pick");
 
+let colorMode = DEFAULT_MODE;
 let color = DEFAULT_COLOR;
 let gridSize = sizeSlider.value;
 let isDragging = false;
+board.style.backgroundColor = DEFAULT_BOARD;
+
+boardColor.addEventListener("input", () => {
+  board.style.backgroundColor = boardColor.value;
+});
 
 sketchPad(gridSize);
 
@@ -23,20 +33,25 @@ function sketchPad(gridSize) {
     const grid = document.createElement("div");
     grid.classList.add("grid-item");
     board.appendChild(grid);
-    grid.addEventListener("mousedown", (e) => {
+  }
+  const gridElements = document.querySelectorAll(".grid-item");
+  gridElements.forEach((square) => {
+    square.addEventListener("mousedown", (e) => {
       isDragging = true;
     });
-    grid.addEventListener("mousemove", (e) => {
+  });
+  gridElements.forEach((square) => {
+    square.addEventListener("mousemove", (e) => {
       if (isDragging === true) {
-        colorChanger(grid);
+        colorChanger(square);
       }
     });
-    window.addEventListener("mouseup", (e) => {
-      if (isDragging === true) {
-        isDragging = false;
-      }
-    });
-  }
+  });
+  window.addEventListener("mouseup", (e) => {
+    if (isDragging === true) {
+      isDragging = false;
+    }
+  });
 }
 
 function newSketch() {
@@ -49,18 +64,38 @@ function newSketch() {
 function colorChanger(grid) {
   grid.style.setProperty("--color", `${color}`);
 }
-
-sizeSlider.addEventListener("input", () => {
-  newSketch();
-});
 colorPicker.addEventListener("input", () => {
   color = colorPicker.value;
 });
+sizeSlider.addEventListener("input", () => {
+  newSketch();
+});
+colorOption.addEventListener("click", () => {
+  colorMode = "color";
+  color = colorPicker.value;
+  buttonSelected();
+});
 eraser.addEventListener("click", () => {
-  color = "black";
+  colorMode = "eraser";
+  color = boardColor.value;
+  buttonSelected();
 });
 
 clearScreen.addEventListener("click", () => {
+  boardColor.value = DEFAULT_BOARD;
+  board.style.backgroundColor = DEFAULT_BOARD;
+
   color = DEFAULT_COLOR;
+  colorMode = DEFAULT_COLOR;
+  buttonSelected();
   newSketch();
 });
+function buttonSelected() {
+  if (colorMode === "eraser") {
+    colorOption.classList.remove("selected");
+    eraser.classList.add("selected");
+  } else {
+    colorOption.classList.add("selected");
+    eraser.classList.remove("selected");
+  }
+}

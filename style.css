@@ -25,7 +25,7 @@ body {
   align-items: center;
   background-color: rgb(35, 35, 35);
   gap: 20px;
-
+  flex-wrap: wrap;
   font-family: "Permanent Marker", cursive;
   color: gold;
 }
@@ -41,7 +41,6 @@ body {
   width: 400px;
   border: 5px solid gold;
   display: grid;
-  background-color: black;
 }
 
 .footer {
@@ -65,9 +64,23 @@ button {
   color: gold;
   background-color: black;
   border: none;
+  height: 70px;
+  border-radius: 8px;
+  width: 100px;
 }
 button:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
+}
+
+.selected {
+  background-color: gold;
+  color: black;
+}
+.size-picker {
+  text-align: center;
+}
+input[type="range"] {
+  background-color: black;
 }
 .color-pick {
   -webkit-appearance: none;
@@ -84,3 +97,5 @@ button:hover {
   border: 2px solid black;
   border-radius: 300px;
 }
+
+/* Slider Styling */
