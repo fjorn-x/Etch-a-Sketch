@@ -38,6 +38,7 @@ function sketchPad(gridSize) {
   gridElements.forEach((square) => {
     square.addEventListener("mousedown", (e) => {
       isDragging = true;
+      colorChanger(square);
     });
   });
   gridElements.forEach((square) => {
